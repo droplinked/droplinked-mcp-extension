@@ -1,0 +1,76 @@
+{
+  "manifest_version": "0.3",
+  "name": "droplinked",
+  "display_name": "droplinked",
+  "version": "0.1.0",
+  "description": "Discover and verify products across droplinked's KYB-attested merchant network. Read-only agentic-commerce discovery.",
+  "author": {
+    "name": "droplinked",
+    "url": "https://github.com/droplinked",
+    "email": "ops@droplinked.com"
+  },
+  "homepage": "https://droplinked.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/droplinked/droplinked-mcp-extension"
+  },
+  "support": "https://github.com/droplinked/droplinked-mcp-extension/issues",
+  "privacy_policies": ["https://droplinked.com/privacy"],
+  "license": "MIT",
+  "keywords": [
+    "commerce",
+    "shopping",
+    "products",
+    "merchant",
+    "discovery",
+    "agentic",
+    "ecommerce"
+  ],
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server/index.js"],
+      "env": {
+        "DROPLINKED_API_BASE": "https://apiv3.droplinked.com"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "find_inventory",
+      "description": "Discover droplinked inventory (SKU-level) by free-text query and/or filters (country, currency, price range, verified-brand, in-stock)."
+    },
+    {
+      "name": "find_merchant",
+      "description": "Find a droplinked merchant by slug, name, or category and return verified merchant cards."
+    },
+    {
+      "name": "get_feed",
+      "description": "Return the URL of the droplinked public product feed (verification-aware, feed v2)."
+    },
+    {
+      "name": "find_affiliate_programs",
+      "description": "Discover droplinked affiliate programs by vertical, commission rate, payout type, and on-chain attestation status."
+    },
+    {
+      "name": "verify_brand_attestation",
+      "description": "Resolve the standalone on-chain brand attestation for a droplinked shop slug."
+    },
+    {
+      "name": "get_brand_attestation_status",
+      "description": "Poll the brand attestation request lifecycle (NOT_REQUESTED, PENDING, APPROVED, MINTED, REJECTED) for a droplinked shop."
+    },
+    {
+      "name": "get_trust_fabric_stats",
+      "description": "Return aggregate-only counts for the droplinked trust fabric (service providers, verified partners, on-chain attestations)."
+    }
+  ],
+  "compatibility": {
+    "claude_desktop": ">=0.10.0",
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  }
+}

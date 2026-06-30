@@ -1,0 +1,37 @@
+{
+  "name": "droplinked-mcp-extension",
+  "version": "0.1.0",
+  "description": "Read-only droplinked product discovery and brand-verification MCP server packaged as a Claude Desktop Extension.",
+  "license": "MIT",
+  "type": "module",
+  "author": "droplinked",
+  "homepage": "https://droplinked.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/droplinked/droplinked-mcp-extension"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "manifest.json",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "pack": "npm run build && node scripts/assemble.mjs && mcpb pack . droplinked.mcpb",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@anthropic-ai/mcpb": "^2.1.2",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}
