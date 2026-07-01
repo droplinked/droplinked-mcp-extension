@@ -2,7 +2,8 @@
   "manifest_version": "0.3",
   "name": "droplinked",
   "display_name": "droplinked",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "icon": "icon.png",
   "description": "Discover and verify products across droplinked's KYB-attested merchant network. Read-only agentic-commerce discovery.",
   "author": {
     "name": "droplinked",
@@ -15,7 +16,9 @@
     "url": "https://github.com/droplinked/droplinked-mcp-extension"
   },
   "support": "https://github.com/droplinked/droplinked-mcp-extension/issues",
-  "privacy_policies": ["https://droplinked.com/privacy"],
+  "privacy_policies": [
+    "https://droplinked.com/privacy"
+  ],
   "license": "MIT",
   "keywords": [
     "commerce",
@@ -31,7 +34,9 @@
     "entry_point": "server/index.js",
     "mcp_config": {
       "command": "node",
-      "args": ["${__dirname}/server/index.js"],
+      "args": [
+        "${__dirname}/server/index.js"
+      ],
       "env": {
         "DROPLINKED_API_BASE": "https://apiv3.droplinked.com"
       }
